@@ -143,26 +143,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 
     response['insert'] = {"Bloomfire": bloomfire_result}
-        # ########New
-        # blob = ContainerClient.from_connection_string(conn_str="DefaultEndpointsProtocol=https;AccountName=relearning;AccountKey=cmWjWdQN+oCYNTpgjw1Ntg7GRFPoGGMGmxXc35wsLtPmefPdQxZkfA+peJQJPO16YsD2dhO7LIyZ+AStRMMdww==;EndpointSuffix=core.windows.net", container_name="wfm")
+       
     data = json.dumps(bloomfire_result, indent = 8)
     print(type(data))
-        # blob.upload_blob(data, blob)
-        # #############
-
-        # return func.HttpResponse(json.dumps(response))
+       
     return func.HttpResponse(json.dumps(bloomfire_result))
-    # else:
-    #     return func.HttpResponse(
-    #          "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
-    #          status_code=200
-    #     )
-
-
-# def main(req: func.HttpRequest) -> func.HttpResponse:
-#     logging.info('Python HTTP trigger function processed a request.')
-#     name = os.environ["name"]
-#     # name = os.getenv("name")
-#     return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
+ 
     
 
